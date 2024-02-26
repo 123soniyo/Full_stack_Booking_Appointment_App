@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Appointments App</title>
+</head>
+<body>
+    <h1>Booking Appointments App</h1>
+    <form action="/appointment-data" method="post"  onsubmit="saveToCloud(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" >
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+<script>
+    
+    function saveToCloud(event){
+    event.preventDefault()
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const phone = event.target.phone.value;
+
+    const userInfo={
+        name,
+        email,
+        phone
+    }
+
+    // save to user details on crud/curd
+    axios.post('http://localhost:3000/appointment-data',userInfo)
+    .then((res)=>{
+        console.log(res)
+        // showUserInfoOnScreen(res.data)
+        // updateStudentCount(document.getElementById('user-list').getElementsByTagName('li').length);
+
+
+
+    })
+    .catch((err)=>console.log(`Error:something went wrong ${err}`))
+}
+
+
+
+ </script>
+</html>

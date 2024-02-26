@@ -1,0 +1,36 @@
+
+.nav-bar{
+    background-color: yellow;
+        height: 50px; /* Fixed height for the navigation bar */
+        display: flex;
+        justify-content: space-between; /* Align items with space between */
+        align-items: center; /* Center vertically */
+        padding: 0 20px; 
+}
+
+
+
+#nav-item{
+    list-style: none;
+    display: flex; 
+
+
+}
+#nav-item li a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: blue;
+    margin: 5px;
+    padding: 8px;
+   
+}
+
+.form-section{
+    margin: 10px;
+    padding: 10px;
+}
+
+#button{
+    background-color: blue;
+    color: white;
+}
